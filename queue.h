@@ -22,10 +22,6 @@ public:
     }
 
     ~Queue(){
-        for(int i = 0; i < count; i++){
-            int index = (front + i) % capacity;
-            delete candidates[index];
-        }
         delete[] candidates;
     }
 
