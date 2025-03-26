@@ -46,7 +46,7 @@ public:
     }
 
     void displayEmployeesBST() const{
-        employeeBST.displayEmployees();
+        employeeBST.displayEmployeesInOrder();
     }
 
     void sortEmployeesBySalary(){
