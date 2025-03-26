@@ -26,14 +26,14 @@ private:
         }
     }
 
-    Employee* findEmployee(TreeNode* node, const std::string& name){
+    Employee* findEmployee(TreeNode* node, const std::string& name) const{ 
         if(!node) return nullptr;
         if(name == node->employee->getName()) return node->employee;
         if(name < node->employee->getName()) return findEmployee(node->left, name);
         return findEmployee(node->right, name);
     }
 
-    void displayEmployees(TreeNode* node){
+    void displayEmployees(TreeNode* node) const{ 
         if(node){
             displayEmployees(node->left);
             node->employee->display();
@@ -57,11 +57,11 @@ public:
         insertNode(root, emp);
     }
 
-    Employee* findEmployee(const std::string& name){
+    Employee* findEmployee(const std::string& name) const{
         return findEmployee(root, name);
     }
 
-    void displayEmployees(){
+    void displayEmployees() const{  
         displayEmployees(root);
     }
 };
