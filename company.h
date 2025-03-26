@@ -22,7 +22,7 @@ public:
     }
 
     ~Company() {
-        for(int i = 0;i < count; i++){
+        for(int i = 0; i < count; i++){
             delete employees[i];
         }
         delete[] employees;
@@ -30,7 +30,7 @@ public:
 
     void addEmployee(const string &name, int exp, double sal){
         if(count >= capacity){
-            cout<<"No more space for new employees."<<endl;
+            cout << "No more space for new employees." << endl;
             return;
         }
         Employee* emp = new Employee(name, sal, exp);
@@ -46,7 +46,7 @@ public:
     }
 
     void displayEmployeesBST() const{
-        employeeBST.displayEmployeesInOrder();
+        employeeBST.displayEmployees();
     }
 
     void sortEmployeesBySalary(){
@@ -54,14 +54,15 @@ public:
     }
 
     Employee* getEmployee(int index){
-        if(index >= 0 && index<count){
+        if(index >= 0 && index < count){
             return employees[index];
         }
+        cout << "Invalid employee index" << endl;
         return nullptr;
     }
 
     Employee* findEmployee(const string& name){
-        return employeeBST.getEmployee(name);
+        return employeeBST.findEmployee(name);
     }
 
     Employee* processNextCandidate(){
